@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <van-nav-bar title="长沙-1903" left-text="返回" left-arrow @click-left="onClickLeft" />
+    <van-nav-bar title="长沙-1903" left-text="返回" left-arrow @click-left="onClickLeft" fixed />
     <transition name="fly">
       <router-view></router-view>
     </transition>
@@ -29,18 +29,21 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.box{
+.box {
+  padding-top: 46px;
+  padding-bottom: 50px;
   overflow-x: hidden;
-.fly-enter{
-  transform: translateX(100%)
-}
-.fly-leave-to{
-  transform: translateX(-100%);
-  position: absolute;
-  left:-300%;
-}
-.fly-enter-active,.fly-leave-active{
-  transition: all .8s linear
-}
+  .fly-enter {
+    transform: translateX(100%);
+  }
+  .fly-leave-to {
+    transform: translateX(-100%);
+    position: absolute;
+    left: -300%;
+  }
+  .fly-enter-active,
+  .fly-leave-active {
+    transition: all 0.8s linear;
+  }
 }
 </style>

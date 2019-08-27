@@ -6,11 +6,15 @@ import router from './router'
 
 import './plugins/index'
 import axios from 'axios'
+import moment from 'moment'
 // 配置根路径
 axios.defaults.baseURL = 'http://localhost:5000/'
 // 全局配置 axios
 Vue.prototype.$http = axios
 
+Vue.filter('datefmt', (str, arg = "'YYYY-MM-DD hh:mm:ss'") => {
+  return moment(str).format(arg)
+})
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
