@@ -4,8 +4,9 @@ import Index from '../views/Index'
 import Newslist from '../views/Index/news/newslist'
 import Newsinfo from '../views/Index/news/newsinfo'
 import Photolist from '../views/Index/photos/photolist'
-import Goodslist from '../views/Index/Goodslist'
-// import Noone from '../views/Index/Goodslist/Noone'
+import Photoinfo from '../views/Index/photos/photoinfo'
+import Goodslist from '../views/Index/goods/goodslist'
+import Goodsinfo from '../views/Index/goods/goodsinfo'
 import Friend from '../views/Friend'
 import Cart from '../views/Cart'
 import Search from '../views/Search'
@@ -42,20 +43,20 @@ export default new Router({
       component: Newsinfo
     },
     {
+      path: '/home/photolist',
+      component: Photolist
+    },
+    {
+      path: '/home/photoinfo/:id',
+      component: Photoinfo
+    },
+    {
       path: '/home/goodslist',
       component: Goodslist
     },
     {
-      path: '/home/photolist',
-      component: Photolist
+      path: '/home/goodsinfo/:id',
+      component: Goodsinfo
     }
-    // {
-    //   path: '/home/goodslist',
-    //   redirect: '/home/goodslist?pageindex=1'
-    // },
-    // {
-    //   path: '/home/goodslist?pageindex=1',
-    //   redirect: Noone
-    // }
   ]
 })

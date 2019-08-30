@@ -3,10 +3,10 @@
     <van-tabs @change="getimgs" animated>
       <van-tab v-for="photolist in photolists" :title="photolist.title" :key="photolist.id">
         <template v-if="imgs.length!=0">
-          <div v-for="img in imgs" :key="img.id" class="img-box">
+          <router-link :to="'/home/photoinfo/'+img.id" v-for="img in imgs" :key="img.id" class="img-box">
             <!-- <img :src="img.img_url" alt=""> -->
             <img v-lazy="img.img_url" >
-          </div>
+          </router-link>
         </template>
         <div v-else class="deng">敬 请 期 待</div>
       </van-tab>
